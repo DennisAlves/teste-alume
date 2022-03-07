@@ -1,11 +1,19 @@
-export class Lancamento{
+export class launche{
     
     private nome: string = ""
     private description: string = ""
     private from: string = ""
     private to: string = ""
-    private windowStart: Date = new Date(0)
-    
+    private windowStart: string = ""
+
+    constructor(nome: string, description: string,from: string, to: string, windowStart: string){
+        this.nome = nome;
+            this.description = description;
+            this.from = from;
+            this.to = to;
+            this.windowStart = windowStart;
+    };
+
     public getNome(): string {
         return this.nome;
     }
@@ -38,11 +46,11 @@ export class Lancamento{
         this.to = value;
     }
 
-    get getWindowStart(): Date {
+    get getWindowStart(): string {
         return this.windowStart;
     }
 
-    set setWindowStart(value: Date) {
+    set setWindowStart(value: string) {
         this.windowStart = value;
     }
 }
