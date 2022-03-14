@@ -46,6 +46,7 @@ http://localhost:3001/upcoming-launches
 Requisição feita no dia 22/08/2021:
 
 ``` JSON
+
  "launches": [
         {
             "nome": "Axiom Space Mission 1",
@@ -77,5 +78,6 @@ Requisição feita no dia 22/08/2021:
         }
     ]
 }
+
 ```
 
