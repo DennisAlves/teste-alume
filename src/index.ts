@@ -1,15 +1,10 @@
-
-import * as dotenv from "dotenv";
 import {AddressInfo} from "net";
 import express from "express";
 import {UpcomingLaunchesRouter} from "./Routers/UpcomingLaunchesRouter";
 
-
-dotenv.config();
 const app = express();
 const cors = require('cors');
 app.use(express.json(),cors());
-
 
 async function main(): Promise<void> {
     app.use('',UpcomingLaunchesRouter);
