@@ -1,7 +1,7 @@
 import express from "express";
-import {launchesControl} from "../Control/LaunchesControl";
+import { LaunchersControl } from "../Control/LaunchersControl";
 
 
 export const UpcomingLaunchesRouter = express.Router();
 
-UpcomingLaunchesRouter.get("/upcoming-launches", new launchesControl().launches);
+UpcomingLaunchesRouter.get("/upcoming-launches", new LaunchersControl().launches);

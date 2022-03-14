@@ -1,18 +1,18 @@
-export class launche{
+export class Launch{
     
-    private nome: string = ""
-    private description: string = ""
-    private from: string = ""
-    private to: string = ""
-    private windowStart: string = ""
+    private nome: string = "";
+    private description: string = "";
+    private from: string = "";
+    private to: string = "";
+    private windowStart: string = "";
 
-    constructor(nome: string, description: string,from: string, to: string, windowStart: string){
+    constructor(nome: string, description: string, from: string, to: string, windowStart: string) {
         this.nome = nome;
-            this.description = description;
-            this.from = from;
-            this.to = to;
-            this.windowStart = windowStart;
-    };
+        this.description = description;
+        this.from = from;
+        this.to = to;
+        this.windowStart = windowStart;
+    }
 
     public getNome(): string {
         return this.nome;

@@ -1,30 +1,30 @@
 import {IStrategy} from "./IStrategy";
-import {launche} from "../Model/launche";
+import {Launch} from "../Model/launche";
 import {DateTime} from 'luxon'
 
 export class ValidateLaunch implements IStrategy {
 
     public process(events: any): any {
-        
-        const Months = 6
-        const launches: launche[] = []
+
+        const Months = 6;
+        const launches: Launch[] = [];
 
         events.results.forEach(((evt: any) => {
             if (evt.launches.length > 0 && evt.launches[0].launch_service_provider && evt.launches[0].launch_service_provider.name === 'SpaceX') {
-                const launchDate = DateTime.fromISO(evt.launches[0].window_start)
-                const launchLimit = DateTime.now().plus({months: Months})
+                const launchDate = DateTime.fromISO(evt.launches[0].window_start);
+                const launchLimit = DateTime.now().plus({months: Months});
                 if (launchDate < launchLimit &&  DateTime.now() < launchDate ) {
-                    const launch = new launche(
+                    const launch = new Launch(
                         evt.launches[0].mission.name,
                         evt.launches[0].mission.description,
                         evt.launches[0].pad.location.name,
                         evt.launches[0].mission.orbit.name,
                         launchDate.setLocale('pt-BR').toFormat('dd/LL/yyyy')
                     )
-                    launches.push(launch)
+                    launches.push(launch);
                 }
             }
         }))
-        return launches
+        return launches;
     }
 }

@@ -2,11 +2,11 @@ import axios from "axios";
 import {Request, Response} from "express";
 import {ValidateLaunch} from "../Business/ValidateLaunch";
 
-export class launchesControl {
+export class LaunchersControl {
 
     public async launches (req: Request, res: Response){
         try {
-            let result = []
+            let result = [];
             try {
                 const response = await axios.get('https://ll.thespacedevs.com/2.2.0/event/upcoming/', {
                     params: {
@@ -21,9 +21,9 @@ export class launchesControl {
                 console.error(error);
             }
 
-            res.status(200).send({launches: result});
+            return res.status(200).send({ launches: result });
         } catch (error) {
-            res.status(400).send({erro: error})
+            return res.status(400).send( { error })
         }
 
     }

@@ -12,7 +12,7 @@ app.use(express.json(),cors());
 
 
 async function main(): Promise<void> {
-    app.use('',UpcomingLaunchesRouter)
+    app.use('',UpcomingLaunchesRouter);
 }
 
 main()
