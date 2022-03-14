@@ -8,7 +8,9 @@ export class ValidateLaunch implements IStrategy {
 
         const Months = 6;
         const launches: Launch[] = [];
-
+        if( !events.results ){
+            return launches
+        }
         events.results.forEach(((evt: any) => {
             if (evt.launches.length > 0 && evt.launches[0].launch_service_provider && evt.launches[0].launch_service_provider.name === 'SpaceX') {
                 const launchDate = DateTime.fromISO(evt.launches[0].window_start);

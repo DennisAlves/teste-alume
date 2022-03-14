@@ -20,7 +20,9 @@ export class LaunchersControl {
             } catch (error) {
                 console.error(error);
             }
-
+            if(result.length < 1){
+                return res.status(200).send({ launches: 'sem resultados disponiveis' });
+            }
             return res.status(200).send({ launches: result });
         } catch (error) {
             return res.status(400).send( { error })
