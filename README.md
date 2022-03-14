@@ -8,6 +8,7 @@ Foi usada as seguintes tecnologias
 - Luxon
 - Express
 - Axios
+- Jest
 
 # Instalação
 Para efetuar a instalação digite no seu terminal o comando:
@@ -18,6 +19,23 @@ npm i
 para iniciar o servidor:
 ```
 npm start
+```
+
+# Jest
+para rodar a rotina de teste digite:
+
+```
+npm jest
+```
+No momento apenas foi testada a classe src/Business/ValidateLaunch.ts
+```
+ PASS  src/Business/ValidateLaunch.spec.ts
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        2.985 s, estimated 4 s
+
 ```
 
 É possivel visualizar o resultado no seu Postman com o servidor iniciado, chamando uma requisição do tipo GET com a URL:
