@@ -1,6 +1,5 @@
 import 'jest-extended';
 import {ValidateLaunch} from "./ValidateLaunch";
-import {Launch} from "../Model/launche";
 
 interface SutTypes {
     sut: ValidateLaunch,
